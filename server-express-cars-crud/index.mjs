@@ -64,6 +64,7 @@ app.put(`${CAR_URL}/:carId`, (req, res) => {
 
 
 app.post('/checklogin', (req, res) => {
+    console.log('heyyyyyy')
     const userLog = req.body
     UserService.checkLogin(userLog)
         .then(user => {

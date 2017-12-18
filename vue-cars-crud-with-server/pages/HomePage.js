@@ -9,7 +9,7 @@ export default {
     template: `
         <section>
             <h1>Cars R Us</h1>
-            <log-in @loginEntered="checkLogin"></</log-in>
+            <log-in @loginEntered="checkLogin" @signUpEntered="signUp"></</log-in>
             <ul>
                 <li v-for="car in cars">
                     {{car}}
@@ -58,6 +58,9 @@ export default {
         },     
         checkLogin(email, password){
             UserService.checkLogin(email, password)
+        },
+        signUp(email, password, name){
+            UserService.signUp(email, password, name)
         }
     },
     components: {

@@ -1,9 +1,23 @@
 function checkLogin(email, password) {
-    axios.post('/checklogin', {
+    axios.post('http://localhost:3000/checklogin', {
         email: email,
         password: password
     })
-    .then(function (response) {
+    .then(function (response) {     
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+}
+
+function signUp(email, password, name) {
+    axios.post('http://localhost:3000/signup', {
+        email: email,
+        password: password,
+        name: name
+    })
+    .then(function (response) {     
         console.log(response);
     })
     .catch(function (error) {
@@ -12,5 +26,6 @@ function checkLogin(email, password) {
 }
 
 export default {
-    checkLogin
+    checkLogin,
+    signUp
 }
